@@ -35,6 +35,7 @@ btns.forEach((btn) => {
             }
             selected[r-1] = 'O';
             document.getElementById(r).innerHTML = 'O';
+            btn.disabled = true;
             document.getElementById('player').innerHTML = `Your Turn`;
             turn++;
             check();
