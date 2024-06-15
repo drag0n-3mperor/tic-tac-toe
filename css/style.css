@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #696d7d;
+}
+
+h1 {
+    color: #faf3dd;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    font-size: 72px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#player {
+    color: #c8d5b9;
+    text-align: center;
+    margin: 15px;
+}
+
+.box-container {
+    margin: 15px;
+    padding: 10px;
+    border: solid #68b0ab 4px;
+    border-radius: 20px;
+    filter: opacity(0.5)
+}
+
+.box {
+    display: flex;
+}
+
+.btn {
+    color: #faf3dd;
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+    background-color: #68b0ab;
+    border: none;
+    cursor: pointer;
+}
+
+#reset {
+    margin: 10px 0;
+    align-self: center;
+    font-size: 16px;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.playBtn-box {
+    position: relative;
+    top: -220px;
+    align-self: center;
+}
+
+.playBtn-container {
+    filter: opacity(1f);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.playBtn-container a {
+    text-align: center;
+}
+
+.playBtn-container button {
+    margin: 5px;
+    padding: 10px;
+    width: 300px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
