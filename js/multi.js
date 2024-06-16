@@ -5,6 +5,7 @@ const win = [
     [1,5,9],[3,5,7]
 ];
 let selected = [0,0,0,0,0,0,0,0,0];
+let won = false;
 
 const btns = document.querySelectorAll('.btn');
 console.log(btns);
@@ -33,6 +34,7 @@ resetBtn.addEventListener('click', () => {
     })
     selected= [0,0,0,0,0,0,0,0,0];
     turn = 0;
+    won  = false;
     document.getElementById('player').innerHTML = `Player ${(turn%2)+1} Turn`;
 })
 
@@ -43,8 +45,9 @@ const check = () => {
         let z = selected[elem[2]-1];
         if (x == y && y == z && x != '0') {
             winner(x);
+            won = true;
         }
-        if (turn == 9) {
+        if (won == false && turn == 9) {
             document.getElementById('player').innerHTML = `It\'s a DRAW!`;
         }
     }

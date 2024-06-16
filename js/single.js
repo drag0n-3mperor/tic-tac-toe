@@ -11,6 +11,55 @@ let won  = false;
 //     for (let t = 1; t < n*1e9; t++);
 // }
 
+const algo = () => {
+    for (elem of win) {
+        let tac = 0, toe = 0;
+        for (e of elem) {
+            if (selected[e-1] == 'O')
+            tac++;
+        if (selected[e-1] == '0')
+                toe++;
+        }
+        if (tac == 2 && toe == 1) {
+            console.log(elem);
+            if (selected[elem[0]-1] == '0')
+                return elem[0];
+            else if (selected[elem[1]-1] == '0')
+                return elem[1];
+            else
+            return elem[2];
+    }
+}
+    for (elem of win) {     
+        let tic = 0, toe = 0;
+        for (e of elem) {
+            if (selected[e-1] == 'X')
+                tic++;
+            if (selected[e-1] == '0')
+                toe++;
+        }
+        if (tic == 2 && toe == 1) {
+            console.log(elem);
+            if (selected[elem[0]-1] == '0')
+                return elem[0];
+            else if (selected[elem[1]-1] == '0')
+                return elem[1];
+            else
+                return elem[2];
+        }
+    }
+
+    let r = Math.random();
+    r = r * 8 + 1;
+    r = parseInt(r);
+    while (selected[r-1] != '0') {
+        r = Math.random();
+        r = r * 8 + 1;
+        r = parseInt(r);
+    }
+    return r;
+}
+
 const btns = document.querySelectorAll('.btn');
 console.log(btns);
 btns.forEach((btn) => {
@@ -21,18 +70,10 @@ btns.forEach((btn) => {
         btn.disabled = true;
         turn ++;
         check();
-        console.log(turn);
         if (turn != 9 && won == false) {
             document.getElementById('player').innerHTML = `Computer's Turn`;
             // console.log(won);
-            let r = Math.random();
-            r = r * 8 + 1;
-            r = parseInt(r);
-            while (selected[r-1] != '0') {
-                r = Math.random();
-                r = r * 8 + 1;
-                r = parseInt(r);
-            }
+            let r = algo();
             selected[r-1] = 'O';
             document.getElementById(r).innerHTML = 'O';
             document.getElementById(r).disabled = true;
